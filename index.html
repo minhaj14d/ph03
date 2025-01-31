@@ -5,25 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nature's Platter</title>
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
         </style>
 </head>
 <body class="bg-white">
+    <div class="mobile-container">
+        <div class="topnav">
+          <a href="#home" class="active h-12 object-cover">
+            <img src="c2-assets/logo-footer.png" alt="" ></a>
+          <div id="myLinks">
+            <a href="#news">News</a>
+            <a href="#contact">Contact</a>
+            <a href="#about">About</a>
+          </div>
+          <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+          </a>
+        </div>
+        </div>
+
     <header class="bg-gray-100">
         <div class="container mx-auto px-4 ">
             <div class="flex justify-between items-center py-4">
                 <div class="flex items-center">
                     <img src="c2-assets/logo-header.png" alt="logo" class="h-12">
                 </div>
-                <nav class="h-24 flex items-center space-x-6">
+                <div class="h-24 flex items-center space-x-6">
                     <a href="#" class="text-gray-700 hover:text-green-600">Product</a>
                     <a href="#" class="text-gray-700 hover:text-green-600">Services</a>
                     <a href="#" class="text-gray-700 hover:text-green-600">Contact us</a>
                     <span class="text-gray-400">|</span>
                     <a href="#" class="text-gray-700 hover:text-green-600">Login</a>
                     <a href="#" class="text-gray-700 hover:text-green-600">Register</a>
-                </nav>
+                </div>
             </div>
     <div class="container mx-auto">
         <div class="text-center">
@@ -129,5 +147,26 @@
                 </label>
               </form>
         </section>
+
+
+        <div class="max-w mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
+            <!-- Header -->
+            <div class="bg-green-600 p-6 text-center">
+                <img src="c2-assets/vegetable-busket.png" alt="">
+              <h1 class="text-white text-2xl font-bold">Get Grocery News!</h1>
+              <p class="text-white mt-2">Exclusive training tips, tricks, product deals, and more.</p>
+            </div>
+          
+            <!-- Email Input -->
+            <div class="p-6">
+              <input
+                type="email"
+                placeholder="Enter email..."
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+              />
+              <button class="w-full mt-4 bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition-colors">
+                Subscribe
+              </button>
+            </div>
 </body>
 </html>
