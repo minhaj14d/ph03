@@ -6,46 +6,66 @@
     <title>Nature's Platter</title>
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="tailwind.config.js">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
         </style>
+        <script>
+          function myFunction() {
+            var x = document.getElementById("myLinks");
+            if (x.style.display === "block") {
+              x.style.display = "none";
+            } else {
+              x.style.display = "block";
+            }
+          }
+        </script>
 </head>
-<body class="bg-white">
-    <div class="mobile-container">
-        <div class="topnav">
-          <a href="#home" class="active h-12 object-cover">
-            <img src="c2-assets/logo-footer.png" alt="" ></a>
-          <div id="myLinks">
-            <a href="#news">News</a>
-            <a href="#contact">Contact</a>
-            <a href="#about">About</a>
-          </div>
-          <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-            <i class="fa fa-bars"></i>
-          </a>
-        </div>
-        </div>
+<body class="">
+  <div class="mx-auto text-green-600 rounded-lg sm:hidden">
+    <div class="overflow-hidden relative pt-2">
+      <a href="#home" class="text-green-600 block h-12">
+        <img src="c2-assets/logo-header.png" alt="Logo" class="h-full">
+      </a>
+      <div id="myLinks" class="md:hidden hidden px-4 pb-4">
+        <a href="#product" class="block py-2 hover:text-green-300">Product</a>
+        <a href="#services" class="block py-2 hover:text-green-300">Services</a>
+        <a href="#contact" class="block py-2 hover:text-green-300">Contact us</a>
+        <a href="#login" class="block py-2 hover:text-green-300">Login</a>
+        <a href="#register" class="block py-2 hover:text-green-300">Register</a>
+      </div>
+      <a href="javascript:void(0);" class="text-white block absolute right-0 top-0 p-3" onclick="myFunction()">
+        <i class="fa-solid fa-bars text-black pt-4"></i>
+      </a>
+    </div>
+  </div>
 
     <header class="bg-gray-100">
-        <div class="container mx-auto px-4 ">
-            <div class="flex justify-between items-center py-4">
-                <div class="flex items-center">
-                    <img src="c2-assets/logo-header.png" alt="logo" class="h-12">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto px-4">
+              <nav class="flex  hidden sm:flex justify-between items-center py-4">
+                <!-- Logo -->
+                <div class="text-2xl font-bold">
+                  <img src="c2-assets/logo-header.png" alt="">
                 </div>
-                <div class="h-24 flex items-center space-x-6">
-                    <a href="#" class="text-gray-700 hover:text-green-600">Product</a>
-                    <a href="#" class="text-gray-700 hover:text-green-600">Services</a>
-                    <a href="#" class="text-gray-700 hover:text-green-600">Contact us</a>
-                    <span class="text-gray-400">|</span>
-                    <a href="#" class="text-gray-700 hover:text-green-600">Login</a>
-                    <a href="#" class="text-gray-700 hover:text-green-600">Register</a>
+                <!-- Primary Navbar Items -->
+                <div class="hidden md:flex space-x-6">
+                  <a href="#product" class="hover:text-green-700">Product</a>
+                  <a href="#services" class="hover:text-green-700">Services</a>
+                  <a href="#contact" class="hover:text-green-700">Contact us</a>
                 </div>
-            </div>
-    <div class="container mx-auto">
+                <!-- Secondary Navbar Items -->
+                <div class="hidden md:flex space-x-6">
+                  <a href="#cart" class="px-4 py-2 fa fa-cart-shopping"></a>
+                  <a href="#search" class="px-4 py-2 fa fa-search"></a>
+                  <button class="button rounded bg-gray-300 px-4 py-2 hover:bg-green-700">Login</button>
+                  <button class="button rounded text-white bg-green-600 px-4 py-2 hover:bg-green-700">Register</button>
+                </div>
+              </nav>
+    <div class="container mx-auto mt-4">
         <div class="text-center">
-            <h2 class="text-6xl font-bold">Freshness <span class="text-green-700">You Can Count</span> On, Prices You'll Love!</h2>
+            <h2 class="text-6xl font-bold pt-12">Freshness <span class="text-green-700">You Can Count</span> On, Prices You'll Love!</h2>
             <p class="m-5 text-lg text-gray-500">Shop your daily essentials at unbeatable prices. From fresh produce to pantry staples, we've got you covered every day!</p>
             <div class="flex justify-center items-center">
                 <img src="c2-assets/hero-vegetables.png" alt="veg">
@@ -119,7 +139,7 @@
             </div>
         </section>
         <section class="arrival-container py-12 bg-white">
-            <div class="container mx-auto px-4">
+            <div class="container mx-auto px-4 grid grid:grid-cols-2">
             <h2 class="text-3xl font-bold text-center text-green-700 mb-8 text-left">Arrival & Offers</h2>
         </div>
             <div class="grid grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -133,40 +153,64 @@
                     <div class="bg-gradient-to-b from-green-500 to-green-300 p-4">
                     </div>     
         </section>
-        <section class="newsletter-container">
-            <div>
-                <h2>Get Grocery News!</h2>
-            <p>Exclusive training tips, ticks, product deals and more.</p>
-            <!-- <label for="price" class="block text-sm/6 font-medium text-gray-900">Price</label> 
-            <input type="email" name="email" class="block min-w-0 grow py-1.5 pr-3 pl-1 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6" placeholder="Enter email"> !-->
-            <form>
-                <label class="block">
-                  <span class="email">Email</span>
-                  <input type="email" class="peer ..." />
-                  <p class="invisible peer-invalid:visible ...">Please provide a valid email address.</p>
-                </label>
-              </form>
-        </section>
-
-
-        <div class="max-w mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
-            <!-- Header -->
-            <div class="bg-green-600 p-6 text-center">
-                <img src="c2-assets/vegetable-busket.png" alt="">
-              <h1 class="text-white text-2xl font-bold">Get Grocery News!</h1>
-              <p class="text-white mt-2">Exclusive training tips, tricks, product deals, and more.</p>
+            
+          <footer class="bg-green-600 text-white">
+            
+              <section class="newsletter-container p-6">
+                <div class="flex flex-col md:flex-row items-center bg-gray-100 p-10 rounded-2xl shadow-lg max-w-6xl mx-auto">
+                  <!-- Image -->
+                  <div class="flex-shrink-0">
+                      <img src="c2-assets/vegetable-busket.png" alt="Grocery Basket" class="w-full object-cover rounded-lg">
+                  </div>     
+                  <!-- Content -->
+                  <div class="flex-1 text-center md:text-left md:ml-6">
+                      <h2 class="text-3xl font-bold lg:text-gray-900 text-green-700 pt-4">Get Grocery News!</h2>
+                      <p class="text-gray-600 mt-2">Exclusive training tips, tricks, product deals and more.</p>
+                      <!-- Input Button -->
+                      <div class="mt-4 flex">
+                          <input type="email" placeholder="Enter email" class="text-black text-center lg:text-left flex-1 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500">
+                          </div>
+                          <div class="mt-4">
+                          <button class="bg-green-600 text-white px-4 py-3 rounded-lg hover:bg-green-700">Subscribe</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>   
+                </section>   
+                <!-- Left Section: Logo -->
+                <div class="container mx-auto flex flex-col md:flex-row justify-between items-center md:items-start px-6 pt-24 flex-end">
+                <div class="mb-6 md:mb-0 md:w-1/3">
+                    <div class="flex items-center space-x-2">
+                        <img src="c2-assets/logo-footer.png" alt="Logo" class="">
+                    </div>
+                    <p class="text-gray-200 mt-2 max-w-xs">
+                        Discover a world of treats, toys, and essentials handpicked for your furry friends.
+                    </p>
+                </div>
+        
+                <!-- Middle Section: Links -->
+                <div class="mb-6 md:mb-0 md:w-1/3 text-left lg:text-center">
+                    <ul class="space-y-2 lg:text-right lg:text-2xl text-left">
+                        <li><a href="#" class="hover:underline">Product</a></li>
+                        <li><a href="#" class="hover:underline">Services</a></li>
+                        <li><a href="#" class="hover:underline">Contact us</a></li>
+                    </ul>
+                </div>
+        
+                <!-- Right Section: Social -->
+                <div class="md:w-1/3 text-center md:text-right">
+                    <p class="text-white mb-2">Follow Us</p>
+                    <div class="flex justify-center md:justify-end space-x-4">
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+        
             </div>
-          
-            <!-- Email Input -->
-            <div class="p-6">
-              <input
-                type="email"
-                placeholder="Enter email..."
-                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
-              />
-              <button class="w-full mt-4 bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition-colors">
-                Subscribe
-              </button>
-            </div>
+        </footer>
+        
+
 </body>
 </html>
